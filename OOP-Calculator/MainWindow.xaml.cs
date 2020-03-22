@@ -31,6 +31,11 @@ namespace OOP_Calculator
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
-        
+        private void ClearButtonClick(object sender, RoutedEventArgs e)
+        {
+            inputHandler = new InputHandler();
+            memory = new MemoryFeature();
+            this.DisplayField.Text = inputHandler.getFormattedString();
+        }
     }
 }

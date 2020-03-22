@@ -12,12 +12,18 @@ namespace OOP_Calculator
         protected double answer;
         private void AnsButtonClick(object sender, RoutedEventArgs e)
         {
-            if(answer == 0.0f)
+            try
             {
-                throw new Exception("No evaluation yet");
+                if (answer == 0.0f)
+                {
+                    throw new Exception("No evaluation yet");
+                }
+                inputHandler.concat("Ans");
+                this.DisplayField.Text = inputHandler.getFormattedString();
+            } catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
             }
-            inputHandler.concat("Ans");
-            this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void PlusButtonClick(object sender, RoutedEventArgs e)
@@ -52,19 +58,30 @@ namespace OOP_Calculator
 
         private void MRButtonClick(object sender, RoutedEventArgs e)
         {
-
+            memory.Record(answer);
         }
 
         private void MCButtonClick(object sender, RoutedEventArgs e)
         {
-
+            inputHandler.setNumeric(memory.Copy());
+            DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void EvaluateButton_Click(object sender, RoutedEventArgs e)
         {
-            double ans = inputHandler.evaluate();
-            answer = ans;
-            DisplayField.Text = ans.ToString();
+            try
+            {
+                double ans = inputHandler.evaluate();
+                answer = ans;
+                memory.Record(ans);
+                DisplayField.Text = ans.ToString();
+                inputHandler.flush();
+                inputHandler.setNumeric(ans);
+            } catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+            
         }
     }
 }

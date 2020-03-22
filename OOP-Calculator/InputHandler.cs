@@ -15,6 +15,7 @@ namespace OOP_Calculator
         private bool isOperator;
         private string numeric;
         private string op;
+        private string ans;
         private Queue<string> numericQueue;
         private Queue<Operator> operatorQueue;
 
@@ -27,16 +28,36 @@ namespace OOP_Calculator
             this.isOperator = false;
             this.numeric = "0";
             this.op = "";
+            this.ans = "";
         }
         public double evaluate()
         {
             inputString += numeric;
+            inputString = inputString.Replace("Ans", this.ans);
+            Console.WriteLine(this.inputString);
             using (var read = new StringReader(inputString))
             {
                 Parser p = new Parser();
-
-                return p.parse(read);
+                double ans = p.parse(read);
+                this.ans = ans.ToString().Replace(",", ".");
+                Console.WriteLine(this.ans);
+                return ans;
             }
+        }
+
+        public void flush()
+        {
+            this.inputString = "";
+            this.numeric = "0";
+            this.op = "";
+            this.isComma = false;
+            this.isZero = true;
+            this.isOperator = false;
+        }
+
+        public void setNumeric(double d)
+        {
+            this.numeric = d.ToString().Replace(",", ".");
         }
         public string getFormattedString()
         {
@@ -58,7 +79,12 @@ namespace OOP_Calculator
             else if (op.getOperator() == Operator.Radical)
             {
                 this.op += op.getOperator();
-            } else
+            }
+            else if (op.getOperator() == Operator.Minus && this.op.Length == 1)
+            {
+                this.op += op.getOperator();
+            }
+            else
             {
                 this.op = op.getOperator();
             }

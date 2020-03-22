@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="700" Width="455"
+        Title="Calculator" Height="750" Width="455"
         ResizeMode="NoResize"
         >
     <Grid>
@@ -19,67 +19,68 @@
                 </Border>
             </Border>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="13,556,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="13,612,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="0" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="118,556,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="118,612,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="." FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="CommaButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="223,556,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="223,612,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="Ans" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="AnsButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="13,451,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="13,507,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="1" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="118,451,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="118,507,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="2" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="223,451,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="223,507,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="3" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="13,346,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="13,402,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="4" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="118,347,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="118,403,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="5" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="223,347,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="223,403,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="6" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="13,242,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="13,298,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="7" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="118,242,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="118,298,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="8" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="223,242,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="223,298,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="9" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="328,556,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="328,612,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="＝" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="EvaluateButton_Click"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="328,451,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="328,507,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="+" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="PlusButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="328,346,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="328,402,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="-" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="MinusButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="328,241,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="328,297,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="x" FontSize="32" VerticalAlignment="Top" Height="100" Click="MultiplyButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="328,136,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="328,192,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="/" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="DivideButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="223,136,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="223,192,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="√" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="RootButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="118,136,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="118,192,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="MR" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="MRButtonClick"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="13,136,0,0" VerticalAlignment="Top" Width="100">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="13,192,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="MC" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="MCButtonClick"/>
         </Grid>
-        
+        <Button Content="Clear" FontSize="32" HorizontalAlignment="Left" Margin="13,117,0,0" VerticalAlignment="Top" Width="161" Height="70" Click="ClearButtonClick"/>
+
 
     </Grid>
 </Window>
