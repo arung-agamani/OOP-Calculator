@@ -11,37 +11,37 @@ namespace OOP_Calculator
     {
         private void CommaButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concatNumber(".");
+            inputHandler.concat(".");
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void PlusButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concatNumber(Operator.Plus);
+            inputHandler.concat(Operator.Plus);
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
         
         private void MinusButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concatNumber(Operator.Minus);
+            inputHandler.concat(Operator.Minus);
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void MultiplyButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concatNumber(Operator.Multiply);
+            inputHandler.concat(Operator.Multiply);
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void DivideButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concatNumber(Operator.Divide);
+            inputHandler.concat(Operator.Divide);
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void RootButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concatNumber(Operator.Radical);
+            inputHandler.concat(Operator.Radical);
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 

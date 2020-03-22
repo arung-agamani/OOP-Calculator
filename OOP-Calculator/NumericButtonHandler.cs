@@ -12,8 +12,7 @@ namespace OOP_Calculator
     {
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            inputHandler.concatNumber((sender as Button).Content.ToString());
+            inputHandler.concat((sender as Button).Content.ToString());
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
     }

@@ -12,85 +12,80 @@ namespace OOP_Calculator
         private bool isComma;
         private bool isZero;
         private bool isOperator;
+        private string numeric;
+        private string op;
+        private GenericQueue<string> numericQueue;
+        private GenericQueue<Operator> operatorQueue;
 
         public InputHandler() : base()
         {
+            this.numericQueue = new GenericQueue<string>();
+            this.operatorQueue = new GenericQueue<Operator>();
             this.isComma = false;
             this.isZero = true;
             this.isOperator = false;
+            this.numeric = "0";
+            this.op = "";
         }
 
         public string getFormattedString()
         {
-            string formatted = this.inputString.Replace("r", "\u221A");
+            string formatted = (this.inputString + this.numeric + this.op).Replace("r", "\u221A");
             return formatted;
         }
 
-        public void setComma(bool set)
+        public void concat(Operator op)
         {
-            this.isComma = set;
+            
         }
 
-        public void concatNumber(string num)
+        public void concat(string val)
         {
-            if (num == "+" || num == "-" || num == "*" || num == "*" || num == "/" || num == "r")
+            if (val == "+" || val == "-" || val == "*" || val == "*" || val == "/" || val == "r")
             {
                 if (!this.isOperator)
                 {
-                    this.inputString += num;
+                    this.numericQueue.add(this.numeric);
+                    this.inputString += this.numeric;
                     this.isComma = false;
                     this.isZero = true;
                     this.isOperator = true;
-                }
-            } else
-            {
-                this.isOperator = false;
-                if (this.isZero)
-                {
-                    // allow dot, but only once
-                    if (!this.isComma)
-                    {
-                        if (num == ".")
-                        {
-                            this.isComma = true;
-                            this.isZero = false;
-                            this.inputString += num;
-                        } else if (num != "0")
-                        {
-                            this.isZero = false;
-                            this.inputString += num;
-                        }
-                    } else
-                    {
-                        if (num != ".")
-                        {
-                            this.inputString += num;
-                        }
-                    }
+                    this.op = val;
                 } else
                 {
-                    // allow dot, but only once
-                    if (!this.isComma)
+                    this.op = val;
+                }
+                this.numeric = "";
+
+            } else
+            {
+                if (this.op != "")
+                {
+                    this.inputString += this.op;
+                    this.op = "";
+                    this.numeric = "0";
+                }
+                this.isOperator = false;
+                if (val != "0" && val != ".")
+                {
+                    if (numeric.Equals("0") && numeric.Length == 1)
                     {
-                        if (num == ".")
-                        {
-                            this.isComma = true;
-                            this.isZero = false;
-                            this.inputString += num;
-                        }
-                        else
-                        {
-                            this.isZero = false;
-                            this.inputString += num;
-                        }
+                        this.numeric = val;
+                    } else
+                    { 
+                        this.numeric += val;
                     }
-                    else
-                    {
-                        if (num != ".")
-                        {
-                            this.inputString += num;
-                        }
-                    }
+                    this.isZero = false;
+                } else if (val != "0" && val == "." && !this.isComma)
+                {
+                    this.isComma = true;
+                    this.numeric += val;
+                } else if (val != "." && this.isComma)
+                {
+                    this.numeric += val;
+                } else if (!this.isZero && val != ".")
+                {
+                    this.numeric += val;
                 }
             }
             

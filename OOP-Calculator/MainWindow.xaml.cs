@@ -26,7 +26,7 @@ namespace OOP_Calculator
         {
             InitializeComponent();
             inputHandler = new InputHandler();
-            this.DisplayField.Text = "0";
+            this.DisplayField.Text = inputHandler.getFormattedString();
         }
     }
 }
