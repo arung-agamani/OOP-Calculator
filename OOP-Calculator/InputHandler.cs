@@ -36,59 +36,53 @@ namespace OOP_Calculator
 
         public void concat(Operator op)
         {
-            
+            if (!this.isOperator)
+            {
+                this.numericQueue.add(this.numeric);
+                this.inputString += this.numeric;
+                this.isComma = false;
+                this.isZero = true;
+                this.isOperator = true;
+                this.op = op.getOperator();
+            }
+            else
+            {
+                this.op = op.getOperator();
+            }
+            this.numeric = "";
         }
 
         public void concat(string val)
         {
-            if (val == "+" || val == "-" || val == "*" || val == "*" || val == "/" || val == "r")
+            if (this.op != "")
             {
-                if (!this.isOperator)
-                {
-                    this.numericQueue.add(this.numeric);
-                    this.inputString += this.numeric;
-                    this.isComma = false;
-                    this.isZero = true;
-                    this.isOperator = true;
-                    this.op = val;
-                } else
-                {
-                    this.op = val;
-                }
-                this.numeric = "";
-
-            } else
-            {
-                if (this.op != "")
-                {
-                    this.inputString += this.op;
-                    this.op = "";
-                    this.numeric = "0";
-                }
-                this.isOperator = false;
-                if (val != "0" && val != ".")
-                {
-                    if (numeric.Equals("0") && numeric.Length == 1)
-                    {
-                        this.numeric = val;
-                    } else
-                    { 
-                        this.numeric += val;
-                    }
-                    this.isZero = false;
-                } else if (val != "0" && val == "." && !this.isComma)
-                {
-                    this.isComma = true;
-                    this.numeric += val;
-                } else if (val != "." && this.isComma)
-                {
-                    this.numeric += val;
-                } else if (!this.isZero && val != ".")
-                {
-                    this.numeric += val;
-                }
+                this.inputString += this.op;
+                this.operatorQueue.add(new Operator(this.op));
+                this.op = "";
+                this.numeric = "0";
             }
-            
+            this.isOperator = false;
+            if (val != "0" && val != ".")
+            {
+                if (numeric.Equals("0") && numeric.Length == 1)
+                {
+                    this.numeric = val;
+                } else
+                { 
+                    this.numeric += val;
+                }
+                this.isZero = false;
+            } else if (val != "0" && val == "." && !this.isComma)
+            {
+                this.isComma = true;
+                this.numeric += val;
+            } else if (val != "." && this.isComma)
+            {
+                this.numeric += val;
+            } else if (!this.isZero && val != ".")
+            {
+                this.numeric += val;
+            }
         }
     }
 }

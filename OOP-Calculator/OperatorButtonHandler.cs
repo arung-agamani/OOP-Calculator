@@ -9,39 +9,34 @@ namespace OOP_Calculator
 {
     public partial class MainWindow
     {
-        private void CommaButtonClick(object sender, RoutedEventArgs e)
-        {
-            inputHandler.concat(".");
-            this.DisplayField.Text = inputHandler.getFormattedString();
-        }
-
+        
         private void PlusButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concat(Operator.Plus);
+            inputHandler.concat(new Operator("+"));
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
         
         private void MinusButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concat(Operator.Minus);
+            inputHandler.concat(new Operator("-"));
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void MultiplyButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concat(Operator.Multiply);
+            inputHandler.concat(new Operator("*"));
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void DivideButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concat(Operator.Divide);
+            inputHandler.concat(new Operator("/"));
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
         private void RootButtonClick(object sender, RoutedEventArgs e)
         {
-            inputHandler.concat(Operator.Radical);
+            inputHandler.concat(new Operator("r"));
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
@@ -51,6 +46,11 @@ namespace OOP_Calculator
         }
 
         private void MCButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EvaluateButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

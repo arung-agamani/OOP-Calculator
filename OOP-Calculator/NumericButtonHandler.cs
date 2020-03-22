@@ -15,5 +15,11 @@ namespace OOP_Calculator
             inputHandler.concat((sender as Button).Content.ToString());
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
+
+        private void CommaButtonClick(object sender, RoutedEventArgs e)
+        {
+            inputHandler.concat(".");
+            this.DisplayField.Text = inputHandler.getFormattedString();
+        }
     }
 }
