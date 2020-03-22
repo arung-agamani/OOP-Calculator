@@ -28,6 +28,7 @@ namespace OOP_Calculator
             inputHandler = new InputHandler();
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
+
         
     }
 }

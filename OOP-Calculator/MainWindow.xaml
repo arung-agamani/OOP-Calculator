@@ -19,11 +19,14 @@
                 </Border>
             </Border>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="13,556,0,0" VerticalAlignment="Top" Width="205">
-            <Button Content="0" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="205" Height="100" Click="Button_Click"/>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="13,556,0,0" VerticalAlignment="Top" Width="100">
+            <Button Content="0" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="118,556,0,0" VerticalAlignment="Top" Width="100">
+            <Button Content="." FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="CommaButtonClick"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="223,556,0,0" VerticalAlignment="Top" Width="100">
-            <Button Content="." FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="CommaButtonClick"/>
+            <Button Content="Ans" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="AnsButtonClick"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="13,451,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="1" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="Button_Click"/>
@@ -76,6 +79,7 @@
         <Grid HorizontalAlignment="Left" Height="100" Margin="13,136,0,0" VerticalAlignment="Top" Width="100">
             <Button Content="MC" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" Click="MCButtonClick"/>
         </Grid>
+        
 
     </Grid>
 </Window>

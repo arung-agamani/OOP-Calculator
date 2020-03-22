@@ -9,7 +9,12 @@ namespace OOP_Calculator
 {
     public partial class MainWindow
     {
-        
+        private void AnsButtonClick(object sender, RoutedEventArgs e)
+        {
+            inputHandler.concat("Ans");
+            this.DisplayField.Text = inputHandler.getFormattedString();
+        }
+
         private void PlusButtonClick(object sender, RoutedEventArgs e)
         {
             inputHandler.concat(new Operator("+"));
