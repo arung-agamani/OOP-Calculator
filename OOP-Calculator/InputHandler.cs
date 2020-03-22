@@ -6,26 +6,18 @@ using System.Threading.Tasks;
 
 namespace OOP_Calculator
 {
-    public class Operator
+    
+    public class InputHandler : StringHandler
     {
-        public static string Plus = "+";
-        public static string Minus = "-";
-        public static string Multiply = "*";
-        public static string Divide = "/";
-        public static string Radical = "r";
-    }
-
-    public class InputHandler
-    {
-        public string inputString { get; set; }
         private bool isComma;
         private bool isZero;
+        private bool isOperator;
 
-        public InputHandler()
+        public InputHandler() : base()
         {
-            this.inputString = "0";
             this.isComma = false;
             this.isZero = true;
+            this.isOperator = false;
         }
 
         public string getFormattedString()
@@ -34,50 +26,72 @@ namespace OOP_Calculator
             return formatted;
         }
 
-        public string getRawString()
-        {
-            return this.inputString;
-        }
-
         public void setComma(bool set)
         {
             this.isComma = set;
         }
 
-        public void addOperator(string op, int number)
-        {
-            this.inputString += op + number.ToString();
-        }
-
-        public void addOperator(string op, float number)
-        {
-            this.inputString += op + number.ToString();
-        }
-
-        public void addOperator(string op, double number)
-        {
-            this.inputString += op + number.ToString();
-        }
-
         public void concatNumber(string num)
         {
-            if (!this.isZero && num == "0")
+            if (num == "+" || num == "-" || num == "*" || num == "*" || num == "/" || num == "r")
             {
-                this.inputString += num;
-            } else if (this.isZero && !this.isComma && num == ".")
+                if (!this.isOperator)
+                {
+                    this.inputString += num;
+                    this.isComma = false;
+                    this.isZero = true;
+                    this.isOperator = true;
+                }
+            } else
             {
-                this.inputString += num;
-                setComma(true);
-            } else if (this.isZero && this.isComma && num != ".")
-            {
-                this.inputString += num;
-            } else if (this.isZero && !this.isComma && num != "0")
-            {
-                this.inputString = num;
-                this.isZero = false;
-            } else if (!this.isZero)
-            {
-                this.inputString += num;
+                this.isOperator = false;
+                if (this.isZero)
+                {
+                    // allow dot, but only once
+                    if (!this.isComma)
+                    {
+                        if (num == ".")
+                        {
+                            this.isComma = true;
+                            this.isZero = false;
+                            this.inputString += num;
+                        } else if (num != "0")
+                        {
+                            this.isZero = false;
+                            this.inputString += num;
+                        }
+                    } else
+                    {
+                        if (num != ".")
+                        {
+                            this.inputString += num;
+                        }
+                    }
+                } else
+                {
+                    // allow dot, but only once
+                    if (!this.isComma)
+                    {
+                        if (num == ".")
+                        {
+                            this.isComma = true;
+                            this.isZero = false;
+                            this.inputString += num;
+                        }
+                        else
+                        {
+                            this.isZero = false;
+                            this.inputString += num;
+                        }
+                    }
+                    else
+                    {
+                        if (num != ".")
+                        {
+                            this.inputString += num;
+                        }
+                    }
+                }
             }
             
         }
