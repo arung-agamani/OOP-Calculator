@@ -45,7 +45,10 @@ namespace OOP_Calculator
                 this.isOperator = true;
                 this.op = op.getOperator();
             }
-            else
+            else if (op.getOperator() == Operator.Radical)
+            {
+                this.op += op.getOperator();
+            } else
             {
                 this.op = op.getOperator();
             }
