@@ -9,8 +9,13 @@ namespace OOP_Calculator
 {
     public partial class MainWindow
     {
+        protected double answer;
         private void AnsButtonClick(object sender, RoutedEventArgs e)
         {
+            if(answer == 0.0f)
+            {
+                throw new Exception("No evaluation yet");
+            }
             inputHandler.concat("Ans");
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
@@ -57,7 +62,9 @@ namespace OOP_Calculator
 
         private void EvaluateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            double ans = inputHandler.evaluate();
+            answer = ans;
+            DisplayField.Text = ans.ToString();
         }
     }
 }

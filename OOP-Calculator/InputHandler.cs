@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace OOP_Calculator
 {
@@ -14,20 +15,29 @@ namespace OOP_Calculator
         private bool isOperator;
         private string numeric;
         private string op;
-        private GenericQueue<string> numericQueue;
-        private GenericQueue<Operator> operatorQueue;
+        private Queue<string> numericQueue;
+        private Queue<Operator> operatorQueue;
 
         public InputHandler() : base()
         {
-            this.numericQueue = new GenericQueue<string>();
-            this.operatorQueue = new GenericQueue<Operator>();
+            this.numericQueue = new Queue<string>();
+            this.operatorQueue = new Queue<Operator>();
             this.isComma = false;
             this.isZero = true;
             this.isOperator = false;
             this.numeric = "0";
             this.op = "";
         }
+        public double evaluate()
+        {
+            inputString += numeric;
+            using (var read = new StringReader(inputString))
+            {
+                Parser p = new Parser();
 
+                return p.parse(read);
+            }
+        }
         public string getFormattedString()
         {
             string formatted = (this.inputString + this.numeric + this.op).Replace("r", "\u221A");
@@ -38,7 +48,7 @@ namespace OOP_Calculator
         {
             if (!this.isOperator)
             {
-                this.numericQueue.add(this.numeric);
+                this.numericQueue.Enqueue(this.numeric);
                 this.inputString += this.numeric;
                 this.isComma = false;
                 this.isZero = true;
@@ -60,7 +70,7 @@ namespace OOP_Calculator
             if (this.op != "")
             {
                 this.inputString += this.op;
-                this.operatorQueue.add(new Operator(this.op));
+                this.operatorQueue.Enqueue(new Operator(this.op));
                 this.op = "";
                 this.numeric = "0";
             }

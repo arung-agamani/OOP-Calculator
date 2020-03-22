@@ -55,8 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GenericQueue.cs" />
+    <Compile Include="Expression.cs" />
+    <Compile Include="MemoryFeature.cs" />
     <Compile Include="Operator.cs" />
+    <Compile Include="Parser.cs" />
     <Compile Include="StringHandler.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

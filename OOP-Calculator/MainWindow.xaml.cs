@@ -21,11 +21,13 @@ namespace OOP_Calculator
     public partial class MainWindow : Window
     {
         private InputHandler inputHandler;
+        private MemoryFeature memory;
 
         public MainWindow()
         {
             InitializeComponent();
             inputHandler = new InputHandler();
+            memory = new MemoryFeature();
             this.DisplayField.Text = inputHandler.getFormattedString();
         }
 
